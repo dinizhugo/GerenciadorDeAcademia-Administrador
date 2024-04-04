@@ -12,7 +12,7 @@ public class ListStudent {
         this.alunos = new ArrayList<>();
     }
 
-    private List<Aluno> getAlunos() {
+    public List<Aluno> getAlunos() {
         return alunos;
     }
 

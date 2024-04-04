@@ -9,7 +9,6 @@ import gerenciadordeacademia.administrador.domain.models.Username;
 public interface DataServiceStudent {
     void adcionarAluno(Aluno aluno);
     void suspenderContaAluno(Username userName);
-    void editarContaAluno(Username userName);
     Aluno buscarAluno(String busca);
     List<Aluno> mostrarListaAluno();
 }
