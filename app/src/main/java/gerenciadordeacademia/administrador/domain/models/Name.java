@@ -1,4 +1,4 @@
-package main.java.gerenciadordeacademia.administrador.domain.models;
+package gerenciadordeacademia.administrador.domain.models;
 
 public class Name {
     private String name;
