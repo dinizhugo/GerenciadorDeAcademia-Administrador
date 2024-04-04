@@ -1,8 +1,9 @@
-package main.java.gerenciadordeacademia.administrador.collections;
+package gerenciadordeacademia.administrador.collections;
 
 import java.util.List;
+import java.util.ArrayList;
 
-import main.java.gerenciadordeacademia.administrador.domain.Aluno;
+import gerenciadordeacademia.administrador.domain.Aluno;
 
 public class ListStudent {
     private List<Aluno> alunos;

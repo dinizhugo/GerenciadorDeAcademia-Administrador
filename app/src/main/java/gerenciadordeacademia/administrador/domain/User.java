@@ -1,9 +1,9 @@
-package main.java.gerenciadordeacademia.administrador.domain;
+package gerenciadordeacademia.administrador.domain;
 
-import main.java.gerenciadordeacademia.administrador.domain.models.Nome;
-import main.java.gerenciadordeacademia.administrador.domain.models.Password;
-import main.java.gerenciadordeacademia.administrador.domain.models.UserStatus;
-import main.java.gerenciadordeacademia.administrador.domain.models.Username;
+import gerenciadordeacademia.administrador.domain.models.Name;
+import gerenciadordeacademia.administrador.domain.models.Password;
+import gerenciadordeacademia.administrador.domain.models.UserStatus;
+import gerenciadordeacademia.administrador.domain.models.Username;
 
 public class User {
     private Name nome;
@@ -18,29 +18,27 @@ public class User {
         this.statusConta = status;
     }
 
-    public User(Name nome, Username username, Password senha) {
-        this.nome = nome;
-        this.username = username;
-        this.senha = senha;
-        this.statusConta = true;
+    public UserStatus isStatusConta() {
+        return statusConta;
     }
 
 
-    public String getNome() {
+    public Name getNome() {
         return nome;
     }
 
 
-    public String getUsername() {
+    public Username getUsername() {
         return username;
     }
 
 
-    public String getSenha() {
+    public Password getSenha() {
         return senha;
     }
 
-    public UserStatus isStatusConta() {
+
+    public UserStatus getStatusConta() {
         return statusConta;
     }
 }

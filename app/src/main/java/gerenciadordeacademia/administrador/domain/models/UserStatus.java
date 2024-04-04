@@ -1,5 +1,4 @@
-package main.java.gerenciadordeacademia.administrador.domain.models;
-
+package gerenciadordeacademia.administrador.domain.models;
 
 public class UserStatus {
     private boolean active;

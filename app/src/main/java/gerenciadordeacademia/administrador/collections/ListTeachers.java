@@ -1,18 +1,20 @@
-package main.java.gerenciadordeacademia.administrador.collections;
+package gerenciadordeacademia.administrador.collections;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import main.java.gerenciadordeacademia.administrador.domain.Professor;
+import gerenciadordeacademia.administrador.domain.Professor;
 
-public class ListProfessor {
+import java.util.ArrayList;
+
+
+public class ListTeachers {
     private List<Professor> professores;
 
-    public ListStudent() {
+    public ListTeachers() {
         this.professores = new ArrayList<>();
     }
 
-    private List<Professor> getProfessores() {
+    public List<Professor> getProfessores() {
         return professores;
     }
 

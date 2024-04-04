@@ -1,9 +1,10 @@
-//package main.java.gerenciadordeacademia.administrador.studentManager;
+package gerenciadordeacademia.administrador.studentManager;
+
 
 import java.util.List;
 
-import main.java.gerenciadordeacademia.administrador.domain.Aluno;
-import main.java.gerenciadordeacademia.administrador.domain.models.Username;
+import gerenciadordeacademia.administrador.domain.Aluno;
+import gerenciadordeacademia.administrador.domain.models.Username;
 
 public interface DataServiceStudent {
     void adcionarAluno(Aluno aluno);
