@@ -36,9 +36,14 @@ public class TeacherRepository implements DataServiceTeacher {
     }
 
     @Override
+    public Professor getProfessor(Username userName) {
+        Optional<Professor> usuario = listaProfessores.getProfessores().stream().filter(u -> u.getUsername().getStringUserName().equals(userName)).findFirst();
+        return usuario.isPresent() ? usuario.get() : null;
+    }
+
+    @Override
     public List<Professor> mostrarListaProfessor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarListaProfessor'");
+        return listaProfessores.getProfessores();
     }
     
 }

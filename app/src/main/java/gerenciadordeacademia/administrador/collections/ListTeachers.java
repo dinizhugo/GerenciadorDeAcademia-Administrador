@@ -26,6 +26,7 @@ public class ListTeachers {
         getProfessores().add(novoProfessor);
     }
 
+    // OS MÉTODOS "getProfessor" PODEM SER EXCLUIDOS FUTURAMENTE SE NÃO TIVEREM USO. 
     public Professor getProfessor(int index) {
         return getProfessores().get(index);
     }
