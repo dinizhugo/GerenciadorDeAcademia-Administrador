@@ -45,5 +45,14 @@ public class TeacherRepository implements DataServiceTeacher {
     public List<Professor> mostrarListaProfessor() {
         return listaProfessores.getProfessores();
     }
+
+    @Override
+    public void activateTeacherAccount(Username userName) {
+        Optional<Professor> usuario = listaProfessores.getProfessores().stream().filter(u -> u.equals(userName)).findFirst();
+        if (usuario.isPresent()) {
+            usuario.get().getStatusConta().setActive(true);
+            return;
+        }
+    }
     
 }

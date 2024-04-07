@@ -28,6 +28,10 @@ public class TeacherManager {
         service.suspenderContaProfessor(userName);
     }
 
+    public void activateAccount(Username userName) {
+        service.activateTeacherAccount(userName);
+    }
+
     public Professor searchTeacher(String search) {
         return service.buscarProfessor(search);
     }
