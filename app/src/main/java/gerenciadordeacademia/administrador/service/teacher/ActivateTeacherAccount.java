@@ -25,6 +25,11 @@ public class ActivateTeacherAccount implements Implementation {
             return;
         }
 
+        if (teacherManager.getProfessor(userName).getStatusConta().isActive()) {
+            // A conta já está ativada.
+            return;
+        }
+
         teacherManager.activateAccount(userName);
         
     }

@@ -26,6 +26,11 @@ public class SuspendTeacherAccount implements Implementation {
             return;
         }
 
+        if (!teacherManager.getProfessor(userName).getStatusConta().isActive()) {
+            // A conta já está suspensa.
+            return;
+        }
+
         teacherManager.suspendAccount(userName);
         
     }
