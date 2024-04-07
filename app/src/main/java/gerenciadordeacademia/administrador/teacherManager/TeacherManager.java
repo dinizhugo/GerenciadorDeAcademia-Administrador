@@ -36,4 +36,8 @@ public class TeacherManager {
         return service.mostrarListaProfessor();
     }
 
+    public Professor getProfessor(Username userName) {
+        return service.getProfessor(userName);
+    }
+
 }

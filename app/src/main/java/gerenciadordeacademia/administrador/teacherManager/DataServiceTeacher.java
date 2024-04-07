@@ -9,6 +9,7 @@ public interface DataServiceTeacher {
     void adcionarProfessor(Professor professor);
     void suspenderContaProfessor(Username userName);
     Professor buscarProfessor(String busca);
+    Professor getProfessor(Username username);
     List<Professor> mostrarListaProfessor();
 }
 

@@ -4,7 +4,9 @@ public class Name {
     private String name;
 
     public Name(String name) {
-        this.name = name;
+        if (isValid(name)) {
+            this.name = name;
+        }
     }
 
     public String getStringName() {
@@ -13,6 +15,10 @@ public class Name {
 
     public void setStringName(String name) {
         this.name = name;
+    }
+
+    private boolean isValid(String name) {
+        return name.isBlank() ? false : true;
     }
 
 }
