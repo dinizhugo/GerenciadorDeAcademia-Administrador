@@ -28,8 +28,16 @@ public class StudentManager {
         repository.suspenderContaAluno(userName);
     }
 
+    public void activateAccount(Username userName) {
+        repository.ActivateStudentAccount(userName);
+    }
+
     public Aluno searchStudent(String search) {
         return repository.buscarAluno(search);
+    }
+
+    public Aluno getAluno(Username userName) {
+        return repository.getAluno(userName);
     }
 
     public List<Aluno> showAllStudents() {

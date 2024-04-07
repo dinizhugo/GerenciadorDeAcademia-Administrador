@@ -36,7 +36,21 @@ public class StudentRepository implements DataServiceStudent {
 
     @Override
     public List<Aluno> mostrarListaAluno() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarListaProfessor'");
+      return listaAlunos.getAlunos();
+    }
+
+    @Override
+    public void ActivateStudentAccount(Username userName) {
+        Optional<Aluno> usuario = listaAlunos.getAlunos().stream().filter(u -> u.equals(userName)).findFirst();
+        if (usuario.isPresent()) {
+            usuario.get().getStatusConta().setActive(true);
+            return;
+        }
+    }
+
+    @Override
+    public Aluno getAluno(Username userName) {
+        Optional<Aluno> usuario = listaAlunos.getAlunos().stream().filter(u -> u.getUsername().getStringUserName().equals(userName)).findFirst();
+        return usuario.isPresent() ? usuario.get() : null;
     }
 }
