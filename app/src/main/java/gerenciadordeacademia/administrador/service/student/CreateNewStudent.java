@@ -5,10 +5,10 @@ import gerenciadordeacademia.administrador.domain.models.Name;
 import gerenciadordeacademia.administrador.domain.models.Password;
 import gerenciadordeacademia.administrador.domain.models.UserStatus;
 import gerenciadordeacademia.administrador.domain.models.Username;
-import gerenciadordeacademia.administrador.service.Implementation;
+import gerenciadordeacademia.administrador.service.Service;
 import gerenciadordeacademia.administrador.studentManager.StudentManager;
 
-public class CreateNewStudent implements Implementation {
+public class CreateNewStudent implements Service {
     private StudentManager studentManager;
     private Name name;
     private Username userName;
@@ -24,7 +24,7 @@ public class CreateNewStudent implements Implementation {
     }
 
     @Override
-    public void execute() {
+    public void service() {
 
         if (studentManager.getAluno(userName) != null) {
             // Já existe um usúario com esse userName

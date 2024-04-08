@@ -1,9 +1,9 @@
 package gerenciadordeacademia.administrador.service.teacher;
 
-import gerenciadordeacademia.administrador.service.Implementation;
+import gerenciadordeacademia.administrador.service.Service;
 import gerenciadordeacademia.administrador.teacherManager.TeacherManager;
 
-public class SearchTeacher implements Implementation {
+public class SearchTeacher implements Service {
     private TeacherManager teacherManager;
     private String key;
 
@@ -13,7 +13,7 @@ public class SearchTeacher implements Implementation {
     }
 
     @Override
-    public void execute() {
+    public void service() {
         if (key.isBlank()) {
             // Termo para busca não satisfaz a condição
             return;

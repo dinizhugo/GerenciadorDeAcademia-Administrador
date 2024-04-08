@@ -41,4 +41,5 @@ public class User {
     public UserStatus getStatusConta() {
         return statusConta;
     }
+
 }

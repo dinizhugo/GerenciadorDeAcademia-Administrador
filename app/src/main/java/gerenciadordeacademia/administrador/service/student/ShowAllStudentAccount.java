@@ -1,9 +1,9 @@
 package gerenciadordeacademia.administrador.service.student;
 
-import gerenciadordeacademia.administrador.service.Implementation;
+import gerenciadordeacademia.administrador.service.Service;
 import gerenciadordeacademia.administrador.studentManager.StudentManager;
 
-public class ShowAllStudentAccount implements Implementation{
+public class ShowAllStudentAccount implements Service{
 
     private StudentManager studentManager;
 
@@ -12,7 +12,7 @@ public class ShowAllStudentAccount implements Implementation{
     }
 
     @Override
-    public void execute() {
+    public void service() {
         studentManager.showAllStudents();
     }
     

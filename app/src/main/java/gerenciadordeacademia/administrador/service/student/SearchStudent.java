@@ -1,9 +1,9 @@
 package gerenciadordeacademia.administrador.service.student;
 
-import gerenciadordeacademia.administrador.service.Implementation;
+import gerenciadordeacademia.administrador.service.Service;
 import gerenciadordeacademia.administrador.studentManager.StudentManager;
 
-public class SearchStudent implements Implementation {
+public class SearchStudent implements Service {
     private StudentManager studentManager;
     private String key;
 
@@ -12,7 +12,7 @@ public class SearchStudent implements Implementation {
         this.key = key;
     }
 
-    public void execute() {
+    public void service() {
         if (key.isBlank()) {
             // Termo para busca não satisfaz a condição
             return;

@@ -4,11 +4,32 @@
 package gerenciadordeacademia.administrador;
 
 import org.junit.jupiter.api.Test;
+
+import gerenciadordeacademia.administrador.domain.Professor;
+import gerenciadordeacademia.administrador.domain.models.Name;
+import gerenciadordeacademia.administrador.domain.models.Password;
+import gerenciadordeacademia.administrador.domain.models.UserStatus;
+import gerenciadordeacademia.administrador.domain.models.Username;
+import gerenciadordeacademia.administrador.service.UserService;
+import gerenciadordeacademia.administrador.service.teacher.CreateNewTeacher;
+import gerenciadordeacademia.administrador.teacherManager.TeacherManager;
+import gerenciadordeacademia.administrador.teacherManager.TeacherRepository;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    private TeacherManager teacherManager = TeacherManager.getInstance(new TeacherRepository());
+    private UserService executor = new UserService();
+
+    @Test 
+    void CreateNewProfessor() {
+        Name name = new Name("Hugo");
+        Username userName = new Username("hugo_freitas");
+        Password password = new Password("321");
+        UserStatus status = new UserStatus(true);
+        executor.implementationExecutor(new CreateNewTeacher(teacherManager, name, userName, password, status));
+        Professor professor = teacherManager.searchTeacher("hugo_freitas");
+        assertEquals(professor, teacherManager.getProfessor(userName));
+        
     }
 }

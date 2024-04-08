@@ -5,10 +5,11 @@ import gerenciadordeacademia.administrador.domain.models.Name;
 import gerenciadordeacademia.administrador.domain.models.Password;
 import gerenciadordeacademia.administrador.domain.models.UserStatus;
 import gerenciadordeacademia.administrador.domain.models.Username;
-import gerenciadordeacademia.administrador.service.Implementation;
+import gerenciadordeacademia.administrador.exceptions.UserAlreadyExists;
+import gerenciadordeacademia.administrador.service.Service;
 import gerenciadordeacademia.administrador.teacherManager.TeacherManager;
 
-public class CreateNewTeacher implements Implementation{
+public class CreateNewTeacher implements Service{
 
     private TeacherManager teacherManager;
     private Name name;
@@ -25,10 +26,10 @@ public class CreateNewTeacher implements Implementation{
     }
 
     @Override
-    public void execute() {
+    public void service() {
 
         if (teacherManager.getProfessor(userName) != null) {
-            // Já existe um usúario com esse userName
+            //throw new UserAlreadyExists();
             return;
         }
 

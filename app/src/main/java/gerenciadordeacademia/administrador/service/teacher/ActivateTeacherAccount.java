@@ -1,10 +1,10 @@
 package gerenciadordeacademia.administrador.service.teacher;
 
 import gerenciadordeacademia.administrador.domain.models.Username;
-import gerenciadordeacademia.administrador.service.Implementation;
+import gerenciadordeacademia.administrador.service.Service;
 import gerenciadordeacademia.administrador.teacherManager.TeacherManager;
 
-public class ActivateTeacherAccount implements Implementation {
+public class ActivateTeacherAccount implements Service {
     private TeacherManager teacherManager;
     private Username userName;
 
@@ -14,7 +14,7 @@ public class ActivateTeacherAccount implements Implementation {
     }
 
     @Override
-    public void execute() {
+    public void service() {
         if (userName == null) {
             //Parametro vazio
             return;
