@@ -1,10 +1,12 @@
 package gerenciadordeacademia.administrador.domain.models;
 
+import gerenciadordeacademia.administrador.exceptions.UninformedParameterException;
+
 public class Name {
     private String name;
 
-    public Name(String name) {
-        if (isValid(name)) {
+    public Name(String name) throws UninformedParameterException {
+        if (validateName(name)) {
             this.name = name;
         }
     }
@@ -17,8 +19,10 @@ public class Name {
         this.name = name;
     }
 
-    private boolean isValid(String name) {
-        return name.isBlank() ? false : true;
+    public boolean validateName(String name) throws UninformedParameterException {
+        if (name.isEmpty()) {
+            throw new UninformedParameterException();
+        }
+        return true;
     }
-
 }
