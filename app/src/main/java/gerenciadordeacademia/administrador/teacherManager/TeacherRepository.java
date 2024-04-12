@@ -43,7 +43,7 @@ public class TeacherRepository implements DataServiceTeacher {
 
     @Override
     public List<Professor> mostrarListaProfessor() {
-        return listaProfessores.getProfessores();
+        return listaProfessores.isEmpty() ? null : listaProfessores.getProfessores();
     }
 
     @Override
