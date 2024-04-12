@@ -36,7 +36,7 @@ public class StudentRepository implements DataServiceStudent {
 
     @Override
     public List<Aluno> mostrarListaAluno() {
-      return listaAlunos.getAlunos();
+      return listaAlunos.getAlunos().isEmpty() ? null : listaAlunos.getAlunos();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class StudentRepository implements DataServiceStudent {
 
     @Override
     public Aluno getAluno(Username userName) {
-        Optional<Aluno> usuario = listaAlunos.getAlunos().stream().filter(u -> u.getUsername().getStringUserName().equals(userName)).findFirst();
+        Optional<Aluno> usuario = listaAlunos.getAlunos().stream().filter(u -> u.getUsername().equals(userName)).findFirst();
         return usuario.isPresent() ? usuario.get() : null;
     }
 }
